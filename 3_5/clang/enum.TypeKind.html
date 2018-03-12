@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `TypeKind` enum in crate `clang`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, TypeKind">
+
+    <title>clang::TypeKind - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../dark.css">
+    <link rel="stylesheet" type="text/css" href="../main.css" id="themeStyle">
+    <script src="../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Enum TypeKind</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Unexposed">Unexposed</a><a href="#variant.Void">Void</a><a href="#variant.Bool">Bool</a><a href="#variant.CharS">CharS</a><a href="#variant.CharU">CharU</a><a href="#variant.SChar">SChar</a><a href="#variant.UChar">UChar</a><a href="#variant.WChar">WChar</a><a href="#variant.Char16">Char16</a><a href="#variant.Char32">Char32</a><a href="#variant.Short">Short</a><a href="#variant.UShort">UShort</a><a href="#variant.Int">Int</a><a href="#variant.UInt">UInt</a><a href="#variant.Long">Long</a><a href="#variant.ULong">ULong</a><a href="#variant.LongLong">LongLong</a><a href="#variant.ULongLong">ULongLong</a><a href="#variant.Int128">Int128</a><a href="#variant.UInt128">UInt128</a><a href="#variant.Half">Half</a><a href="#variant.Float16">Float16</a><a href="#variant.Float">Float</a><a href="#variant.Double">Double</a><a href="#variant.LongDouble">LongDouble</a><a href="#variant.Nullptr">Nullptr</a><a href="#variant.Complex">Complex</a><a href="#variant.Dependent">Dependent</a><a href="#variant.Overload">Overload</a><a href="#variant.ObjCId">ObjCId</a><a href="#variant.ObjCClass">ObjCClass</a><a href="#variant.ObjCSel">ObjCSel</a><a href="#variant.Float128">Float128</a><a href="#variant.ObjCInterface">ObjCInterface</a><a href="#variant.ObjCObjectPointer">ObjCObjectPointer</a><a href="#variant.Pointer">Pointer</a><a href="#variant.BlockPointer">BlockPointer</a><a href="#variant.MemberPointer">MemberPointer</a><a href="#variant.LValueReference">LValueReference</a><a href="#variant.RValueReference">RValueReference</a><a href="#variant.Enum">Enum</a><a href="#variant.Record">Record</a><a href="#variant.Typedef">Typedef</a><a href="#variant.FunctionPrototype">FunctionPrototype</a><a href="#variant.FunctionNoPrototype">FunctionNoPrototype</a><a href="#variant.ConstantArray">ConstantArray</a><a href="#variant.DependentSizedArray">DependentSizedArray</a><a href="#variant.IncompleteArray">IncompleteArray</a><a href="#variant.VariableArray">VariableArray</a><a href="#variant.Vector">Vector</a><a href="#variant.Auto">Auto</a><a href="#variant.Elaborated">Elaborated</a><a href="#variant.Pipe">Pipe</a><a href="#variant.OCLImage1dRO">OCLImage1dRO</a><a href="#variant.OCLImage1dArrayRO">OCLImage1dArrayRO</a><a href="#variant.OCLImage1dBufferRO">OCLImage1dBufferRO</a><a href="#variant.OCLImage2dRO">OCLImage2dRO</a><a href="#variant.OCLImage2dArrayRO">OCLImage2dArrayRO</a><a href="#variant.OCLImage2dDepthRO">OCLImage2dDepthRO</a><a href="#variant.OCLImage2dArrayDepthRO">OCLImage2dArrayDepthRO</a><a href="#variant.OCLImage2dMSAARO">OCLImage2dMSAARO</a><a href="#variant.OCLImage2dArrayMSAARO">OCLImage2dArrayMSAARO</a><a href="#variant.OCLImage2dMSAADepthRO">OCLImage2dMSAADepthRO</a><a href="#variant.OCLImage2dArrayMSAADepthRO">OCLImage2dArrayMSAADepthRO</a><a href="#variant.OCLImage3dRO">OCLImage3dRO</a><a href="#variant.OCLImage1dWO">OCLImage1dWO</a><a href="#variant.OCLImage1dArrayWO">OCLImage1dArrayWO</a><a href="#variant.OCLImage1dBufferWO">OCLImage1dBufferWO</a><a href="#variant.OCLImage2dWO">OCLImage2dWO</a><a href="#variant.OCLImage2dArrayWO">OCLImage2dArrayWO</a><a href="#variant.OCLImage2dDepthWO">OCLImage2dDepthWO</a><a href="#variant.OCLImage2dArrayDepthWO">OCLImage2dArrayDepthWO</a><a href="#variant.OCLImage2dMSAAWO">OCLImage2dMSAAWO</a><a href="#variant.OCLImage2dArrayMSAAWO">OCLImage2dArrayMSAAWO</a><a href="#variant.OCLImage2dMSAADepthWO">OCLImage2dMSAADepthWO</a><a href="#variant.OCLImage2dArrayMSAADepthWO">OCLImage2dArrayMSAADepthWO</a><a href="#variant.OCLImage3dWO">OCLImage3dWO</a><a href="#variant.OCLImage1dRW">OCLImage1dRW</a><a href="#variant.OCLImage1dArrayRW">OCLImage1dArrayRW</a><a href="#variant.OCLImage1dBufferRW">OCLImage1dBufferRW</a><a href="#variant.OCLImage2dRW">OCLImage2dRW</a><a href="#variant.OCLImage2dArrayRW">OCLImage2dArrayRW</a><a href="#variant.OCLImage2dDepthRW">OCLImage2dDepthRW</a><a href="#variant.OCLImage2dArrayDepthRW">OCLImage2dArrayDepthRW</a><a href="#variant.OCLImage2dMSAARW">OCLImage2dMSAARW</a><a href="#variant.OCLImage2dArrayMSAARW">OCLImage2dArrayMSAARW</a><a href="#variant.OCLImage2dMSAADepthRW">OCLImage2dMSAADepthRW</a><a href="#variant.OCLImage2dArrayMSAADepthRW">OCLImage2dArrayMSAADepthRW</a><a href="#variant.OCLImage3dRW">OCLImage3dRW</a><a href="#variant.OCLSampler">OCLSampler</a><a href="#variant.OCLEvent">OCLEvent</a><a href="#variant.OCLQueue">OCLQueue</a><a href="#variant.OCLReserveID">OCLReserveID</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Copy">Copy</a><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Eq">Eq</a><a href="#impl-Hash">Hash</a></div><a class="sidebar-title" href="#synthetic-implementations">Auto Trait Implementations</a><div class="sidebar-links"><a href="#impl-Send">Send</a><a href="#impl-Sync">Sync</a></div></div><p class='location'><a href='index.html'>clang</a></p><script>window.sidebarCurrent = {name: 'TypeKind', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>clang</a>::<wbr><a class="enum" href=''>TypeKind</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/clang/lib.rs.html#897-1176' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'><div class="docblock attributes">#[repr(C)]
+</div>pub enum TypeKind {
+    Unexposed,
+    Void,
+    Bool,
+    CharS,
+    CharU,
+    SChar,
+    UChar,
+    WChar,
+    Char16,
+    Char32,
+    Short,
+    UShort,
+    Int,
+    UInt,
+    Long,
+    ULong,
+    LongLong,
+    ULongLong,
+    Int128,
+    UInt128,
+    Half,
+    Float16,
+    Float,
+    Double,
+    LongDouble,
+    Nullptr,
+    Complex,
+    Dependent,
+    Overload,
+    ObjCId,
+    ObjCClass,
+    ObjCSel,
+    Float128,
+    ObjCInterface,
+    ObjCObjectPointer,
+    Pointer,
+    BlockPointer,
+    MemberPointer,
+    LValueReference,
+    RValueReference,
+    Enum,
+    Record,
+    Typedef,
+    FunctionPrototype,
+    FunctionNoPrototype,
+    ConstantArray,
+    DependentSizedArray,
+    IncompleteArray,
+    VariableArray,
+    Vector,
+    Auto,
+    Elaborated,
+    Pipe,
+    OCLImage1dRO,
+    OCLImage1dArrayRO,
+    OCLImage1dBufferRO,
+    OCLImage2dRO,
+    OCLImage2dArrayRO,
+    OCLImage2dDepthRO,
+    OCLImage2dArrayDepthRO,
+    OCLImage2dMSAARO,
+    OCLImage2dArrayMSAARO,
+    OCLImage2dMSAADepthRO,
+    OCLImage2dArrayMSAADepthRO,
+    OCLImage3dRO,
+    OCLImage1dWO,
+    OCLImage1dArrayWO,
+    OCLImage1dBufferWO,
+    OCLImage2dWO,
+    OCLImage2dArrayWO,
+    OCLImage2dDepthWO,
+    OCLImage2dArrayDepthWO,
+    OCLImage2dMSAAWO,
+    OCLImage2dArrayMSAAWO,
+    OCLImage2dMSAADepthWO,
+    OCLImage2dArrayMSAADepthWO,
+    OCLImage3dWO,
+    OCLImage1dRW,
+    OCLImage1dArrayRW,
+    OCLImage1dBufferRW,
+    OCLImage2dRW,
+    OCLImage2dArrayRW,
+    OCLImage2dDepthRW,
+    OCLImage2dArrayDepthRW,
+    OCLImage2dMSAARW,
+    OCLImage2dArrayMSAARW,
+    OCLImage2dMSAADepthRW,
+    OCLImage2dArrayMSAADepthRW,
+    OCLImage3dRW,
+    OCLSampler,
+    OCLEvent,
+    OCLQueue,
+    OCLReserveID,
+}</pre><div class='docblock'><p>Indicates the categorization of a type.</p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Unexposed" class="variant small-section-header"><a href="#variant.Unexposed" class="anchor field"></a><span id='Unexposed.v' class='invisible'><code>Unexposed</code></span></span><div class='docblock'><p>A type whose specific kind is not exposed via this interface.</p>
+</div><span id="variant.Void" class="variant small-section-header"><a href="#variant.Void" class="anchor field"></a><span id='Void.v' class='invisible'><code>Void</code></span></span><div class='docblock'><p><code>void</code></p>
+</div><span id="variant.Bool" class="variant small-section-header"><a href="#variant.Bool" class="anchor field"></a><span id='Bool.v' class='invisible'><code>Bool</code></span></span><div class='docblock'><p><code>bool</code> (C++) or <code>_Bool</code> (C99)</p>
+</div><span id="variant.CharS" class="variant small-section-header"><a href="#variant.CharS" class="anchor field"></a><span id='CharS.v' class='invisible'><code>CharS</code></span></span><div class='docblock'><p>The <code>char</code> type when it is signed by default.</p>
+</div><span id="variant.CharU" class="variant small-section-header"><a href="#variant.CharU" class="anchor field"></a><span id='CharU.v' class='invisible'><code>CharU</code></span></span><div class='docblock'><p>The <code>char</code> type when it is unsigned by default.</p>
+</div><span id="variant.SChar" class="variant small-section-header"><a href="#variant.SChar" class="anchor field"></a><span id='SChar.v' class='invisible'><code>SChar</code></span></span><div class='docblock'><p><code>signed char</code></p>
+</div><span id="variant.UChar" class="variant small-section-header"><a href="#variant.UChar" class="anchor field"></a><span id='UChar.v' class='invisible'><code>UChar</code></span></span><div class='docblock'><p><code>unsigned char</code></p>
+</div><span id="variant.WChar" class="variant small-section-header"><a href="#variant.WChar" class="anchor field"></a><span id='WChar.v' class='invisible'><code>WChar</code></span></span><div class='docblock'><p><code>wchar_t</code></p>
+</div><span id="variant.Char16" class="variant small-section-header"><a href="#variant.Char16" class="anchor field"></a><span id='Char16.v' class='invisible'><code>Char16</code></span></span><div class='docblock'><p><code>char16_t</code></p>
+</div><span id="variant.Char32" class="variant small-section-header"><a href="#variant.Char32" class="anchor field"></a><span id='Char32.v' class='invisible'><code>Char32</code></span></span><div class='docblock'><p><code>char32_t</code></p>
+</div><span id="variant.Short" class="variant small-section-header"><a href="#variant.Short" class="anchor field"></a><span id='Short.v' class='invisible'><code>Short</code></span></span><div class='docblock'><p><code>short</code></p>
+</div><span id="variant.UShort" class="variant small-section-header"><a href="#variant.UShort" class="anchor field"></a><span id='UShort.v' class='invisible'><code>UShort</code></span></span><div class='docblock'><p><code>unsigned short</code></p>
+</div><span id="variant.Int" class="variant small-section-header"><a href="#variant.Int" class="anchor field"></a><span id='Int.v' class='invisible'><code>Int</code></span></span><div class='docblock'><p><code>int</code></p>
+</div><span id="variant.UInt" class="variant small-section-header"><a href="#variant.UInt" class="anchor field"></a><span id='UInt.v' class='invisible'><code>UInt</code></span></span><div class='docblock'><p><code>unsigned int</code></p>
+</div><span id="variant.Long" class="variant small-section-header"><a href="#variant.Long" class="anchor field"></a><span id='Long.v' class='invisible'><code>Long</code></span></span><div class='docblock'><p><code>long</code></p>
+</div><span id="variant.ULong" class="variant small-section-header"><a href="#variant.ULong" class="anchor field"></a><span id='ULong.v' class='invisible'><code>ULong</code></span></span><div class='docblock'><p><code>unsigned long</code></p>
+</div><span id="variant.LongLong" class="variant small-section-header"><a href="#variant.LongLong" class="anchor field"></a><span id='LongLong.v' class='invisible'><code>LongLong</code></span></span><div class='docblock'><p><code>long long</code></p>
+</div><span id="variant.ULongLong" class="variant small-section-header"><a href="#variant.ULongLong" class="anchor field"></a><span id='ULongLong.v' class='invisible'><code>ULongLong</code></span></span><div class='docblock'><p><code>unsigned long long</code></p>
+</div><span id="variant.Int128" class="variant small-section-header"><a href="#variant.Int128" class="anchor field"></a><span id='Int128.v' class='invisible'><code>Int128</code></span></span><div class='docblock'><p><code>__int128_t</code></p>
+</div><span id="variant.UInt128" class="variant small-section-header"><a href="#variant.UInt128" class="anchor field"></a><span id='UInt128.v' class='invisible'><code>UInt128</code></span></span><div class='docblock'><p><code>__uint128_t</code></p>
+</div><span id="variant.Half" class="variant small-section-header"><a href="#variant.Half" class="anchor field"></a><span id='Half.v' class='invisible'><code>Half</code></span></span><div class='docblock'><p>A half-precision (16-bit) floating point type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.Float16" class="variant small-section-header"><a href="#variant.Float16" class="anchor field"></a><span id='Float16.v' class='invisible'><code>Float16</code></span></span><div class='docblock'><p>A half-precision (16-bit) floating point type.</p>
+<p>Only produced by <code>libclang</code> 6.0 and later.</p>
+</div><span id="variant.Float" class="variant small-section-header"><a href="#variant.Float" class="anchor field"></a><span id='Float.v' class='invisible'><code>Float</code></span></span><div class='docblock'><p><code>float</code></p>
+</div><span id="variant.Double" class="variant small-section-header"><a href="#variant.Double" class="anchor field"></a><span id='Double.v' class='invisible'><code>Double</code></span></span><div class='docblock'><p><code>double</code></p>
+</div><span id="variant.LongDouble" class="variant small-section-header"><a href="#variant.LongDouble" class="anchor field"></a><span id='LongDouble.v' class='invisible'><code>LongDouble</code></span></span><div class='docblock'><p><code>long double</code></p>
+</div><span id="variant.Nullptr" class="variant small-section-header"><a href="#variant.Nullptr" class="anchor field"></a><span id='Nullptr.v' class='invisible'><code>Nullptr</code></span></span><div class='docblock'><p><code>nullptr_t</code> (C++11)</p>
+</div><span id="variant.Complex" class="variant small-section-header"><a href="#variant.Complex" class="anchor field"></a><span id='Complex.v' class='invisible'><code>Complex</code></span></span><div class='docblock'><p>A C99 complex type (e.g., <code>_Complex float</code>).</p>
+</div><span id="variant.Dependent" class="variant small-section-header"><a href="#variant.Dependent" class="anchor field"></a><span id='Dependent.v' class='invisible'><code>Dependent</code></span></span><div class='docblock'><p>An unknown dependent type.</p>
+</div><span id="variant.Overload" class="variant small-section-header"><a href="#variant.Overload" class="anchor field"></a><span id='Overload.v' class='invisible'><code>Overload</code></span></span><div class='docblock'><p>The type of an unresolved overload set.</p>
+</div><span id="variant.ObjCId" class="variant small-section-header"><a href="#variant.ObjCId" class="anchor field"></a><span id='ObjCId.v' class='invisible'><code>ObjCId</code></span></span><div class='docblock'><p><code>id</code> (Objective-C)</p>
+</div><span id="variant.ObjCClass" class="variant small-section-header"><a href="#variant.ObjCClass" class="anchor field"></a><span id='ObjCClass.v' class='invisible'><code>ObjCClass</code></span></span><div class='docblock'><p><code>Class</code> (Objective-C)</p>
+</div><span id="variant.ObjCSel" class="variant small-section-header"><a href="#variant.ObjCSel" class="anchor field"></a><span id='ObjCSel.v' class='invisible'><code>ObjCSel</code></span></span><div class='docblock'><p><code>SEL</code> (Objective-C)</p>
+</div><span id="variant.Float128" class="variant small-section-header"><a href="#variant.Float128" class="anchor field"></a><span id='Float128.v' class='invisible'><code>Float128</code></span></span><div class='docblock'><p><code>__float128</code></p>
+<p>Only produced by <code>libclang</code> 3.9 and later.</p>
+</div><span id="variant.ObjCInterface" class="variant small-section-header"><a href="#variant.ObjCInterface" class="anchor field"></a><span id='ObjCInterface.v' class='invisible'><code>ObjCInterface</code></span></span><div class='docblock'><p>An Objective-C interface type.</p>
+</div><span id="variant.ObjCObjectPointer" class="variant small-section-header"><a href="#variant.ObjCObjectPointer" class="anchor field"></a><span id='ObjCObjectPointer.v' class='invisible'><code>ObjCObjectPointer</code></span></span><div class='docblock'><p>An Objective-C pointer to object type.</p>
+</div><span id="variant.Pointer" class="variant small-section-header"><a href="#variant.Pointer" class="anchor field"></a><span id='Pointer.v' class='invisible'><code>Pointer</code></span></span><div class='docblock'><p>A pointer type.</p>
+</div><span id="variant.BlockPointer" class="variant small-section-header"><a href="#variant.BlockPointer" class="anchor field"></a><span id='BlockPointer.v' class='invisible'><code>BlockPointer</code></span></span><div class='docblock'><p>A block pointer type (e.g., <code>void (^)(int)</code>).</p>
+</div><span id="variant.MemberPointer" class="variant small-section-header"><a href="#variant.MemberPointer" class="anchor field"></a><span id='MemberPointer.v' class='invisible'><code>MemberPointer</code></span></span><div class='docblock'><p>A pointer to a record member type.</p>
+</div><span id="variant.LValueReference" class="variant small-section-header"><a href="#variant.LValueReference" class="anchor field"></a><span id='LValueReference.v' class='invisible'><code>LValueReference</code></span></span><div class='docblock'><p>An l-value reference (e.g. <code>int&amp;</code>).</p>
+</div><span id="variant.RValueReference" class="variant small-section-header"><a href="#variant.RValueReference" class="anchor field"></a><span id='RValueReference.v' class='invisible'><code>RValueReference</code></span></span><div class='docblock'><p>An r-value reference (e.g. <code>int&amp;&amp;</code>).</p>
+</div><span id="variant.Enum" class="variant small-section-header"><a href="#variant.Enum" class="anchor field"></a><span id='Enum.v' class='invisible'><code>Enum</code></span></span><div class='docblock'><p>An enum type.</p>
+</div><span id="variant.Record" class="variant small-section-header"><a href="#variant.Record" class="anchor field"></a><span id='Record.v' class='invisible'><code>Record</code></span></span><div class='docblock'><p>A record type such as a struct or a class.</p>
+</div><span id="variant.Typedef" class="variant small-section-header"><a href="#variant.Typedef" class="anchor field"></a><span id='Typedef.v' class='invisible'><code>Typedef</code></span></span><div class='docblock'><p>A typedef.</p>
+</div><span id="variant.FunctionPrototype" class="variant small-section-header"><a href="#variant.FunctionPrototype" class="anchor field"></a><span id='FunctionPrototype.v' class='invisible'><code>FunctionPrototype</code></span></span><div class='docblock'><p>A function prototype with parameter type information (e.g., <code>void foo(int)</code>).</p>
+</div><span id="variant.FunctionNoPrototype" class="variant small-section-header"><a href="#variant.FunctionNoPrototype" class="anchor field"></a><span id='FunctionNoPrototype.v' class='invisible'><code>FunctionNoPrototype</code></span></span><div class='docblock'><p>A function prototype without parameter type information (e.g., <code>void foo()</code>).</p>
+</div><span id="variant.ConstantArray" class="variant small-section-header"><a href="#variant.ConstantArray" class="anchor field"></a><span id='ConstantArray.v' class='invisible'><code>ConstantArray</code></span></span><div class='docblock'><p>An array type with a specified size that is an integer constant expression.</p>
+</div><span id="variant.DependentSizedArray" class="variant small-section-header"><a href="#variant.DependentSizedArray" class="anchor field"></a><span id='DependentSizedArray.v' class='invisible'><code>DependentSizedArray</code></span></span><div class='docblock'><p>An array type with a specified size that is a dependent value.</p>
+</div><span id="variant.IncompleteArray" class="variant small-section-header"><a href="#variant.IncompleteArray" class="anchor field"></a><span id='IncompleteArray.v' class='invisible'><code>IncompleteArray</code></span></span><div class='docblock'><p>An array type without a specified size.</p>
+</div><span id="variant.VariableArray" class="variant small-section-header"><a href="#variant.VariableArray" class="anchor field"></a><span id='VariableArray.v' class='invisible'><code>VariableArray</code></span></span><div class='docblock'><p>An array type with a specified size that is not an integer constant expression.</p>
+</div><span id="variant.Vector" class="variant small-section-header"><a href="#variant.Vector" class="anchor field"></a><span id='Vector.v' class='invisible'><code>Vector</code></span></span><div class='docblock'><p>A GCC generic vector type.</p>
+</div><span id="variant.Auto" class="variant small-section-header"><a href="#variant.Auto" class="anchor field"></a><span id='Auto.v' class='invisible'><code>Auto</code></span></span><div class='docblock'><p>A C++11 <code>decltype(auto)</code> type.</p>
+<p>Only produced by <code>libclang</code> 3.8 and later.</p>
+</div><span id="variant.Elaborated" class="variant small-section-header"><a href="#variant.Elaborated" class="anchor field"></a><span id='Elaborated.v' class='invisible'><code>Elaborated</code></span></span><div class='docblock'><p>A type that was referred to using an elaborated type keyword (e.g., <code>struct S</code>).</p>
+<p>Only produced by <code>libclang</code> 3.9 and later.</p>
+</div><span id="variant.Pipe" class="variant small-section-header"><a href="#variant.Pipe" class="anchor field"></a><span id='Pipe.v' class='invisible'><code>Pipe</code></span></span><div class='docblock'><p>An OpenCL pipe type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage1dRO" class="variant small-section-header"><a href="#variant.OCLImage1dRO" class="anchor field"></a><span id='OCLImage1dRO.v' class='invisible'><code>OCLImage1dRO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage1dArrayRO" class="variant small-section-header"><a href="#variant.OCLImage1dArrayRO" class="anchor field"></a><span id='OCLImage1dArrayRO.v' class='invisible'><code>OCLImage1dArrayRO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage1dBufferRO" class="variant small-section-header"><a href="#variant.OCLImage1dBufferRO" class="anchor field"></a><span id='OCLImage1dBufferRO.v' class='invisible'><code>OCLImage1dBufferRO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dRO" class="variant small-section-header"><a href="#variant.OCLImage2dRO" class="anchor field"></a><span id='OCLImage2dRO.v' class='invisible'><code>OCLImage2dRO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dArrayRO" class="variant small-section-header"><a href="#variant.OCLImage2dArrayRO" class="anchor field"></a><span id='OCLImage2dArrayRO.v' class='invisible'><code>OCLImage2dArrayRO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dDepthRO" class="variant small-section-header"><a href="#variant.OCLImage2dDepthRO" class="anchor field"></a><span id='OCLImage2dDepthRO.v' class='invisible'><code>OCLImage2dDepthRO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dArrayDepthRO" class="variant small-section-header"><a href="#variant.OCLImage2dArrayDepthRO" class="anchor field"></a><span id='OCLImage2dArrayDepthRO.v' class='invisible'><code>OCLImage2dArrayDepthRO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dMSAARO" class="variant small-section-header"><a href="#variant.OCLImage2dMSAARO" class="anchor field"></a><span id='OCLImage2dMSAARO.v' class='invisible'><code>OCLImage2dMSAARO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dArrayMSAARO" class="variant small-section-header"><a href="#variant.OCLImage2dArrayMSAARO" class="anchor field"></a><span id='OCLImage2dArrayMSAARO.v' class='invisible'><code>OCLImage2dArrayMSAARO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dMSAADepthRO" class="variant small-section-header"><a href="#variant.OCLImage2dMSAADepthRO" class="anchor field"></a><span id='OCLImage2dMSAADepthRO.v' class='invisible'><code>OCLImage2dMSAADepthRO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dArrayMSAADepthRO" class="variant small-section-header"><a href="#variant.OCLImage2dArrayMSAADepthRO" class="anchor field"></a><span id='OCLImage2dArrayMSAADepthRO.v' class='invisible'><code>OCLImage2dArrayMSAADepthRO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage3dRO" class="variant small-section-header"><a href="#variant.OCLImage3dRO" class="anchor field"></a><span id='OCLImage3dRO.v' class='invisible'><code>OCLImage3dRO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage1dWO" class="variant small-section-header"><a href="#variant.OCLImage1dWO" class="anchor field"></a><span id='OCLImage1dWO.v' class='invisible'><code>OCLImage1dWO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage1dArrayWO" class="variant small-section-header"><a href="#variant.OCLImage1dArrayWO" class="anchor field"></a><span id='OCLImage1dArrayWO.v' class='invisible'><code>OCLImage1dArrayWO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage1dBufferWO" class="variant small-section-header"><a href="#variant.OCLImage1dBufferWO" class="anchor field"></a><span id='OCLImage1dBufferWO.v' class='invisible'><code>OCLImage1dBufferWO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dWO" class="variant small-section-header"><a href="#variant.OCLImage2dWO" class="anchor field"></a><span id='OCLImage2dWO.v' class='invisible'><code>OCLImage2dWO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dArrayWO" class="variant small-section-header"><a href="#variant.OCLImage2dArrayWO" class="anchor field"></a><span id='OCLImage2dArrayWO.v' class='invisible'><code>OCLImage2dArrayWO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dDepthWO" class="variant small-section-header"><a href="#variant.OCLImage2dDepthWO" class="anchor field"></a><span id='OCLImage2dDepthWO.v' class='invisible'><code>OCLImage2dDepthWO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dArrayDepthWO" class="variant small-section-header"><a href="#variant.OCLImage2dArrayDepthWO" class="anchor field"></a><span id='OCLImage2dArrayDepthWO.v' class='invisible'><code>OCLImage2dArrayDepthWO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dMSAAWO" class="variant small-section-header"><a href="#variant.OCLImage2dMSAAWO" class="anchor field"></a><span id='OCLImage2dMSAAWO.v' class='invisible'><code>OCLImage2dMSAAWO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dArrayMSAAWO" class="variant small-section-header"><a href="#variant.OCLImage2dArrayMSAAWO" class="anchor field"></a><span id='OCLImage2dArrayMSAAWO.v' class='invisible'><code>OCLImage2dArrayMSAAWO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dMSAADepthWO" class="variant small-section-header"><a href="#variant.OCLImage2dMSAADepthWO" class="anchor field"></a><span id='OCLImage2dMSAADepthWO.v' class='invisible'><code>OCLImage2dMSAADepthWO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dArrayMSAADepthWO" class="variant small-section-header"><a href="#variant.OCLImage2dArrayMSAADepthWO" class="anchor field"></a><span id='OCLImage2dArrayMSAADepthWO.v' class='invisible'><code>OCLImage2dArrayMSAADepthWO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage3dWO" class="variant small-section-header"><a href="#variant.OCLImage3dWO" class="anchor field"></a><span id='OCLImage3dWO.v' class='invisible'><code>OCLImage3dWO</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage1dRW" class="variant small-section-header"><a href="#variant.OCLImage1dRW" class="anchor field"></a><span id='OCLImage1dRW.v' class='invisible'><code>OCLImage1dRW</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage1dArrayRW" class="variant small-section-header"><a href="#variant.OCLImage1dArrayRW" class="anchor field"></a><span id='OCLImage1dArrayRW.v' class='invisible'><code>OCLImage1dArrayRW</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage1dBufferRW" class="variant small-section-header"><a href="#variant.OCLImage1dBufferRW" class="anchor field"></a><span id='OCLImage1dBufferRW.v' class='invisible'><code>OCLImage1dBufferRW</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dRW" class="variant small-section-header"><a href="#variant.OCLImage2dRW" class="anchor field"></a><span id='OCLImage2dRW.v' class='invisible'><code>OCLImage2dRW</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dArrayRW" class="variant small-section-header"><a href="#variant.OCLImage2dArrayRW" class="anchor field"></a><span id='OCLImage2dArrayRW.v' class='invisible'><code>OCLImage2dArrayRW</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dDepthRW" class="variant small-section-header"><a href="#variant.OCLImage2dDepthRW" class="anchor field"></a><span id='OCLImage2dDepthRW.v' class='invisible'><code>OCLImage2dDepthRW</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dArrayDepthRW" class="variant small-section-header"><a href="#variant.OCLImage2dArrayDepthRW" class="anchor field"></a><span id='OCLImage2dArrayDepthRW.v' class='invisible'><code>OCLImage2dArrayDepthRW</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dMSAARW" class="variant small-section-header"><a href="#variant.OCLImage2dMSAARW" class="anchor field"></a><span id='OCLImage2dMSAARW.v' class='invisible'><code>OCLImage2dMSAARW</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dArrayMSAARW" class="variant small-section-header"><a href="#variant.OCLImage2dArrayMSAARW" class="anchor field"></a><span id='OCLImage2dArrayMSAARW.v' class='invisible'><code>OCLImage2dArrayMSAARW</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dMSAADepthRW" class="variant small-section-header"><a href="#variant.OCLImage2dMSAADepthRW" class="anchor field"></a><span id='OCLImage2dMSAADepthRW.v' class='invisible'><code>OCLImage2dMSAADepthRW</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage2dArrayMSAADepthRW" class="variant small-section-header"><a href="#variant.OCLImage2dArrayMSAADepthRW" class="anchor field"></a><span id='OCLImage2dArrayMSAADepthRW.v' class='invisible'><code>OCLImage2dArrayMSAADepthRW</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLImage3dRW" class="variant small-section-header"><a href="#variant.OCLImage3dRW" class="anchor field"></a><span id='OCLImage3dRW.v' class='invisible'><code>OCLImage3dRW</code></span></span><div class='docblock'><p>An OpenCL image type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLSampler" class="variant small-section-header"><a href="#variant.OCLSampler" class="anchor field"></a><span id='OCLSampler.v' class='invisible'><code>OCLSampler</code></span></span><div class='docblock'><p>An OpenCL sampler type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLEvent" class="variant small-section-header"><a href="#variant.OCLEvent" class="anchor field"></a><span id='OCLEvent.v' class='invisible'><code>OCLEvent</code></span></span><div class='docblock'><p>An OpenCL event type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLQueue" class="variant small-section-header"><a href="#variant.OCLQueue" class="anchor field"></a><span id='OCLQueue.v' class='invisible'><code>OCLQueue</code></span></span><div class='docblock'><p>An OpenCL queue type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div><span id="variant.OCLReserveID" class="variant small-section-header"><a href="#variant.OCLReserveID" class="anchor field"></a><span id='OCLReserveID.v' class='invisible'><code>OCLReserveID</code></span></span><div class='docblock'><p>An OpenCL reserve ID type.</p>
+<p>Only produced by <code>libclang</code> 5.0 and later.</p>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+            <div id='implementations-list'>
+        <h3 id='impl-Copy' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html" title="trait core::marker::Copy">Copy</a> for <a class="enum" href="../clang/enum.TypeKind.html" title="enum clang::TypeKind">TypeKind</a></code><a href='#impl-Copy' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/clang/lib.rs.html#895' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../clang/enum.TypeKind.html" title="enum clang::TypeKind">TypeKind</a></code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/clang/lib.rs.html#895' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../clang/enum.TypeKind.html" title="enum clang::TypeKind">TypeKind</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/clang/lib.rs.html#895' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../clang/enum.TypeKind.html" title="enum clang::TypeKind">TypeKind</a></code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/clang/lib.rs.html#895' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/clang/lib.rs.html#895' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../clang/enum.TypeKind.html" title="enum clang::TypeKind">TypeKind</a></code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/clang/lib.rs.html#895' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../clang/enum.TypeKind.html" title="enum clang::TypeKind">TypeKind</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/clang/lib.rs.html#895' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, other: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Rhs) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/cmp.rs.html#121' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="enum" href="../clang/enum.TypeKind.html" title="enum clang::TypeKind">TypeKind</a></code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/clang/lib.rs.html#895' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div><h3 id='impl-Hash' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html" title="trait core::hash::Hash">Hash</a> for <a class="enum" href="../clang/enum.TypeKind.html" title="enum clang::TypeKind">TypeKind</a></code><a href='#impl-Hash' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/clang/lib.rs.html#895' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.hash' class="method"><span id='hash.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash' class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, __arg_0: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>__H)</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/clang/lib.rs.html#895' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
+</div><h4 id='method.hash_slice' class="method"><span id='hash_slice.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice' class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>H) <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait" href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html" title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.3.0'>1.3.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/hash/mod.rs.html#202-208' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
+</div></div></div>
+            <h2 id='synthetic-implementations' class='small-section-header'>
+              Auto Trait Implementations<a href='#synthetic-implementations' class='anchor'></a>
+            </h2>
+            <div id='synthetic-implementations-list'>
+        <h3 id='impl-Send' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="enum" href="../clang/enum.TypeKind.html" title="enum clang::TypeKind">TypeKind</a></code><a href='#impl-Send' class='anchor'></a></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 id='impl-Sync' class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="enum" href="../clang/enum.TypeKind.html" title="enum clang::TypeKind">TypeKind</a></code><a href='#impl-Sync' class='anchor'></a></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "clang";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

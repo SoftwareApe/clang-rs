@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `CompletionChunk` enum in crate `clang`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, CompletionChunk">
+
+    <title>clang::completion::CompletionChunk - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    
+    <link rel="stylesheet" type="text/css" href="../../dark.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <script src="../../storage.js"></script>
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        <div class="sidebar-menu">&#9776;</div>
+        
+        <p class='location'>Enum CompletionChunk</p><div class="sidebar-elems"><div class="block items"><a class="sidebar-title" href="#variants">Variants</a><div class="sidebar-links"><a href="#variant.Colon">Colon</a><a href="#variant.Comma">Comma</a><a href="#variant.Equals">Equals</a><a href="#variant.Semicolon">Semicolon</a><a href="#variant.LeftAngleBracket">LeftAngleBracket</a><a href="#variant.RightAngleBracket">RightAngleBracket</a><a href="#variant.LeftBrace">LeftBrace</a><a href="#variant.RightBrace">RightBrace</a><a href="#variant.LeftParenthesis">LeftParenthesis</a><a href="#variant.RightParenthesis">RightParenthesis</a><a href="#variant.LeftSquareBracket">LeftSquareBracket</a><a href="#variant.RightSquareBracket">RightSquareBracket</a><a href="#variant.HorizontalSpace">HorizontalSpace</a><a href="#variant.VerticalSpace">VerticalSpace</a><a href="#variant.CurrentParameter">CurrentParameter</a><a href="#variant.Informative">Informative</a><a href="#variant.Placeholder">Placeholder</a><a href="#variant.ResultType">ResultType</a><a href="#variant.Text">Text</a><a href="#variant.TypedText">TypedText</a><a href="#variant.Optional">Optional</a></div><a class="sidebar-title" href="#methods">Methods</a><div class="sidebar-links"><a href="#method.get_text">get_text</a><a href="#method.is_optional">is_optional</a></div><a class="sidebar-title" href="#implementations">Trait Implementations</a><div class="sidebar-links"><a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-PartialEq">PartialEq</a><a href="#impl-Eq">Eq</a></div><a class="sidebar-title" href="#synthetic-implementations">Auto Trait Implementations</a><div class="sidebar-links"><a href="#impl-Send">!Send</a><a href="#impl-Sync">!Sync</a></div></div><p class='location'><a href='../index.html'>clang</a>::<wbr><a href='index.html'>completion</a></p><script>window.sidebarCurrent = {name: 'CompletionChunk', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+    </nav>
+
+    <div class="theme-picker">
+        <button id="theme-picker" aria-label="Pick another theme!">
+            <img src="../../brush.svg" width="18" alt="Pick another theme!">
+        </button>
+        <div id="theme-choices"></div>
+    </div>
+    <script src="../../theme.js"></script>
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>clang</a>::<wbr><a href='index.html'>completion</a>::<wbr><a class="enum" href=''>CompletionChunk</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/clang/completion.rs.html#41-85' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum CompletionChunk&lt;'r&gt; {
+    Colon,
+    Comma,
+    Equals,
+    Semicolon,
+    LeftAngleBracket,
+    RightAngleBracket,
+    LeftBrace,
+    RightBrace,
+    LeftParenthesis,
+    RightParenthesis,
+    LeftSquareBracket,
+    RightSquareBracket,
+    HorizontalSpace(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>),
+    VerticalSpace(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>),
+    CurrentParameter(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>),
+    Informative(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>),
+    Placeholder(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>),
+    ResultType(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>),
+    Text(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>),
+    TypedText(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>),
+    Optional(<a class="struct" href="../../clang/completion/struct.CompletionString.html" title="struct clang::completion::CompletionString">CompletionString</a>&lt;'r&gt;),
+}</pre><div class='docblock'><p>A piece of a code completion string.</p>
+</div><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id="variant.Colon" class="variant small-section-header"><a href="#variant.Colon" class="anchor field"></a><span id='Colon.v' class='invisible'><code>Colon</code></span></span><div class='docblock'><p>A colon (<code>':'</code>).</p>
+</div><span id="variant.Comma" class="variant small-section-header"><a href="#variant.Comma" class="anchor field"></a><span id='Comma.v' class='invisible'><code>Comma</code></span></span><div class='docblock'><p>A comma (<code>','</code>).</p>
+</div><span id="variant.Equals" class="variant small-section-header"><a href="#variant.Equals" class="anchor field"></a><span id='Equals.v' class='invisible'><code>Equals</code></span></span><div class='docblock'><p>An equals sign (<code>'='</code>).</p>
+</div><span id="variant.Semicolon" class="variant small-section-header"><a href="#variant.Semicolon" class="anchor field"></a><span id='Semicolon.v' class='invisible'><code>Semicolon</code></span></span><div class='docblock'><p>A semicolon (<code>';'</code>).</p>
+</div><span id="variant.LeftAngleBracket" class="variant small-section-header"><a href="#variant.LeftAngleBracket" class="anchor field"></a><span id='LeftAngleBracket.v' class='invisible'><code>LeftAngleBracket</code></span></span><div class='docblock'><p>A left angle bracket (<code>'&lt;'</code>).</p>
+</div><span id="variant.RightAngleBracket" class="variant small-section-header"><a href="#variant.RightAngleBracket" class="anchor field"></a><span id='RightAngleBracket.v' class='invisible'><code>RightAngleBracket</code></span></span><div class='docblock'><p>A right angle bracket (<code>'&gt;'</code>).</p>
+</div><span id="variant.LeftBrace" class="variant small-section-header"><a href="#variant.LeftBrace" class="anchor field"></a><span id='LeftBrace.v' class='invisible'><code>LeftBrace</code></span></span><div class='docblock'><p>A left brace (<code>'{'</code>).</p>
+</div><span id="variant.RightBrace" class="variant small-section-header"><a href="#variant.RightBrace" class="anchor field"></a><span id='RightBrace.v' class='invisible'><code>RightBrace</code></span></span><div class='docblock'><p>A right brace (<code>'}'</code>).</p>
+</div><span id="variant.LeftParenthesis" class="variant small-section-header"><a href="#variant.LeftParenthesis" class="anchor field"></a><span id='LeftParenthesis.v' class='invisible'><code>LeftParenthesis</code></span></span><div class='docblock'><p>A left parentesis (<code>'('</code>)).</p>
+</div><span id="variant.RightParenthesis" class="variant small-section-header"><a href="#variant.RightParenthesis" class="anchor field"></a><span id='RightParenthesis.v' class='invisible'><code>RightParenthesis</code></span></span><div class='docblock'><p>A right parenthesis (<code>')'</code>).</p>
+</div><span id="variant.LeftSquareBracket" class="variant small-section-header"><a href="#variant.LeftSquareBracket" class="anchor field"></a><span id='LeftSquareBracket.v' class='invisible'><code>LeftSquareBracket</code></span></span><div class='docblock'><p>A left square bracket (<code>'['</code>).</p>
+</div><span id="variant.RightSquareBracket" class="variant small-section-header"><a href="#variant.RightSquareBracket" class="anchor field"></a><span id='RightSquareBracket.v' class='invisible'><code>RightSquareBracket</code></span></span><div class='docblock'><p>A right square bracket (<code>']'</code>).</p>
+</div><span id="variant.HorizontalSpace" class="variant small-section-header"><a href="#variant.HorizontalSpace" class="anchor field"></a><span id='HorizontalSpace.v' class='invisible'><code>HorizontalSpace(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>)</code></span></span><div class='docblock'><p>Horizontal space (e.g., <code>' '</code>).</p>
+</div><span id="variant.VerticalSpace" class="variant small-section-header"><a href="#variant.VerticalSpace" class="anchor field"></a><span id='VerticalSpace.v' class='invisible'><code>VerticalSpace(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>)</code></span></span><div class='docblock'><p>Vertical space (e.g., <code>'\n'</code>).</p>
+</div><span id="variant.CurrentParameter" class="variant small-section-header"><a href="#variant.CurrentParameter" class="anchor field"></a><span id='CurrentParameter.v' class='invisible'><code>CurrentParameter(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>)</code></span></span><div class='docblock'><p>Text that describes the current parameter when code completion was run on a function call,
+message send, or template specialization.</p>
+</div><span id="variant.Informative" class="variant small-section-header"><a href="#variant.Informative" class="anchor field"></a><span id='Informative.v' class='invisible'><code>Informative(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>)</code></span></span><div class='docblock'><p>Informative text that should be displayed but not inserted as part of the template.</p>
+</div><span id="variant.Placeholder" class="variant small-section-header"><a href="#variant.Placeholder" class="anchor field"></a><span id='Placeholder.v' class='invisible'><code>Placeholder(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>)</code></span></span><div class='docblock'><p>Text that should be replaced by the user.</p>
+</div><span id="variant.ResultType" class="variant small-section-header"><a href="#variant.ResultType" class="anchor field"></a><span id='ResultType.v' class='invisible'><code>ResultType(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>)</code></span></span><div class='docblock'><p>Text that specifies the result type of the containing result.</p>
+</div><span id="variant.Text" class="variant small-section-header"><a href="#variant.Text" class="anchor field"></a><span id='Text.v' class='invisible'><code>Text(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>)</code></span></span><div class='docblock'><p>Text that should be inserted.</p>
+</div><span id="variant.TypedText" class="variant small-section-header"><a href="#variant.TypedText" class="anchor field"></a><span id='TypedText.v' class='invisible'><code>TypedText(<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>)</code></span></span><div class='docblock'><p>Text that the user would be expected to type to get the containing code completion result.</p>
+</div><span id="variant.Optional" class="variant small-section-header"><a href="#variant.Optional" class="anchor field"></a><span id='Optional.v' class='invisible'><code>Optional(<a class="struct" href="../../clang/completion/struct.CompletionString.html" title="struct clang::completion::CompletionString">CompletionString</a>&lt;'r&gt;)</code></span></span><div class='docblock'><p>An optional piece that could be part of the template but is not required.</p>
+</div>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'r&gt; <a class="enum" href="../../clang/completion/enum.CompletionChunk.html" title="enum clang::completion::CompletionChunk">CompletionChunk</a>&lt;'r&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/clang/completion.rs.html#87-124' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.get_text' class="method"><span id='get_text.v' class='invisible'><code>pub fn <a href='#method.get_text' class='fnname'>get_text</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/clang/completion.rs.html#91-115' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns the text associated with this completion chunk if this chunk is not optional.</p>
+</div><h4 id='method.is_optional' class="method"><span id='is_optional.v' class='invisible'><code>pub fn <a href='#method.is_optional' class='fnname'>is_optional</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/clang/completion.rs.html#118-123' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns whether this completion chunk is optional.</p>
+</div></div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+            <div id='implementations-list'>
+        <h3 id='impl-Clone' class='impl'><span class='in-band'><code>impl&lt;'r&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../../clang/completion/enum.CompletionChunk.html" title="enum clang::completion::CompletionChunk">CompletionChunk</a>&lt;'r&gt;</code><a href='#impl-Clone' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/clang/completion.rs.html#40' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../../clang/completion/enum.CompletionChunk.html" title="enum clang::completion::CompletionChunk">CompletionChunk</a>&lt;'r&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/clang/completion.rs.html#40' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 id='impl-Debug' class='impl'><span class='in-band'><code>impl&lt;'r&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../clang/completion/enum.CompletionChunk.html" title="enum clang::completion::CompletionChunk">CompletionChunk</a>&lt;'r&gt;</code><a href='#impl-Debug' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/clang/completion.rs.html#40' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/clang/completion.rs.html#40' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
+</div></div><h3 id='impl-PartialEq' class='impl'><span class='in-band'><code>impl&lt;'r&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../../clang/completion/enum.CompletionChunk.html" title="enum clang::completion::CompletionChunk">CompletionChunk</a>&lt;'r&gt;</code><a href='#impl-PartialEq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/clang/completion.rs.html#40' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../clang/completion/enum.CompletionChunk.html" title="enum clang::completion::CompletionChunk">CompletionChunk</a>&lt;'r&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/clang/completion.rs.html#40' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../clang/completion/enum.CompletionChunk.html" title="enum clang::completion::CompletionChunk">CompletionChunk</a>&lt;'r&gt;) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/clang/completion.rs.html#40' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 id='impl-Eq' class='impl'><span class='in-band'><code>impl&lt;'r&gt; <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html" title="trait core::cmp::Eq">Eq</a> for <a class="enum" href="../../clang/completion/enum.CompletionChunk.html" title="enum clang::completion::CompletionChunk">CompletionChunk</a>&lt;'r&gt;</code><a href='#impl-Eq' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/clang/completion.rs.html#40' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'></div></div>
+            <h2 id='synthetic-implementations' class='small-section-header'>
+              Auto Trait Implementations<a href='#synthetic-implementations' class='anchor'></a>
+            </h2>
+            <div id='synthetic-implementations-list'>
+        <h3 id='impl-Send' class='impl'><span class='in-band'><code>impl&lt;'r&gt; !<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html" title="trait core::marker::Send">Send</a> for <a class="enum" href="../../clang/completion/enum.CompletionChunk.html" title="enum clang::completion::CompletionChunk">CompletionChunk</a>&lt;'r&gt;</code><a href='#impl-Send' class='anchor'></a></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div><h3 id='impl-Sync' class='impl'><span class='in-band'><code>impl&lt;'r&gt; !<a class="trait" href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html" title="trait core::marker::Sync">Sync</a> for <a class="enum" href="../../clang/completion/enum.CompletionChunk.html" title="enum clang::completion::CompletionChunk">CompletionChunk</a>&lt;'r&gt;</code><a href='#impl-Sync' class='anchor'></a></span><span class='out-of-band'></span></h3>
+<div class='impl-items'></div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt><kbd>?</kbd></dt>
+                    <dd>Show this help dialog</dd>
+                    <dt><kbd>S</kbd></dt>
+                    <dd>Focus the search field</dd>
+                    <dt><kbd>↑</kbd></dt>
+                    <dd>Move up in search results</dd>
+                    <dt><kbd>↓</kbd></dt>
+                    <dd>Move down in search results</dd>
+                    <dt><kbd>↹</kbd></dt>
+                    <dd>Switch tab</dd>
+                    <dt><kbd>&#9166;</kbd></dt>
+                    <dd>Go to active search result</dd>
+                    <dt><kbd>+</kbd></dt>
+                    <dd>Expand all sections</dd>
+                    <dt><kbd>-</kbd></dt>
+                    <dd>Collapse all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "clang";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
