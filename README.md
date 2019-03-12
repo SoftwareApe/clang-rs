@@ -34,6 +34,12 @@ To target a version of `libclang`, enable one of the following Cargo features:
 If you do not enable one of these features, the API provided by `libclang` 3.5 will be available by
 default.
 
+Example:
+```toml
+[dependencies]
+clang = {version = "0.21.0", features = ["clang_6_0"]}
+```
+
 ## Dependencies
 
 See [here](https://github.com/KyleMayes/clang-sys#dependencies) for information on this crate's
